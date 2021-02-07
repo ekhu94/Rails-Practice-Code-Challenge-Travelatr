@@ -1,6 +1,10 @@
 class DestinationsController < ApplicationController
     before_action :set_destination, only: [:show]
 
+    def index
+        @destinations = Destination.all
+    end
+
     def show
     end
 
