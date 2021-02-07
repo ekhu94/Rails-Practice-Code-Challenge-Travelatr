@@ -2,3 +2,6 @@
 <p><%= @post.content %></p>
 <div>Author: <%= link_to @post.blogger.name, blogger_path(@post.blogger) %></div>
 <div>Destination: <%= link_to @post.destination.name, destination_path(@post.destination) %></div>
+<div>Number of likes: <%= @post.likes %></div>
+<div><%= button_to "Like this post!", upvote_path, method: "patch" %></div>
+<div><%= link_to "Back", posts_path %></div>

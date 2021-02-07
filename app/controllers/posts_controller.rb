@@ -25,6 +25,11 @@ class PostsController < ApplicationController
         end
     end
 
+    def upvote
+        @post.update(likes: @post.likes + 1)
+        redirect_to post_path(@post)
+    end
+
     def edit
     end
 
