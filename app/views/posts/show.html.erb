@@ -1,0 +1,4 @@
+<h2>Title: <%= @post.title %></h2>
+<p><%= @post.content %></p>
+<div>Author: <%= link_to @post.blogger.name, blogger_path(@post.blogger) %></div>
+<div>Destination: <%= link_to @post.destination.name, destination_path(@post.destination) %></div>
