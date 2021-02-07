@@ -14,4 +14,15 @@ class Blogger < ApplicationRecord
         self.posts.max { |a, b| a.likes <=> b.likes }
     end
 
+    def five_most_popular_destinations
+        freq = self.destinations.inject(Hash.new(0)) { |h,v| h[v] += 1; h }.sort_by { |k, v| v }.reverse
+        arr = []
+        i = 0
+        while i < 5
+            arr << freq[i][0] if freq[i] != nil
+            i += 1
+        end
+        arr
+    end
+
 end

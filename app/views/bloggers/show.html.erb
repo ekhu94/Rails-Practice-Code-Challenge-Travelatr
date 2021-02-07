@@ -2,6 +2,12 @@
 <h2>Age: <%= @blogger.age %></h2>
 <h3>Bio:</h3>
 <p><%= @blogger.bio %></p>
-<h3>Total Likes: <%= @blogger.total_likes %></h3>
+<p>Total Likes: <%= @blogger.total_likes %></p>
 <h3>Featured Post: <%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %></h3>
+<p><strong>Most Written About Destinations</strong></p>
+<ol>
+    <% @blogger.five_most_popular_destinations.each do |p| %>
+        <li><strong><%= p.name %></strong> - <%= p.country %></li>
+    <% end %>
+</ol>
 <button><%= link_to "Back", bloggers_path %></button>
